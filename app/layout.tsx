@@ -3,24 +3,23 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import ParticleBackground from '@/components/ParticleBackground'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Mindverse AI - We Create AI as Your Digital Self',
-  description: 'More Than Just AGI, Your Networked Extension. Build your AI Self with Second Me open-source framework or experience Me.bot.',
-  keywords: ['AI', 'Artificial Intelligence', 'Digital Self', 'Second Me', 'Me.bot', 'AGI', 'Mindverse'],
+  title: 'Mindverse AI - Train Your AI Self, Amplify You',
+  description: 'We create AI that amplifies, not erases, YOU. Build your own AI self with Second Me - an open-source prototype where you craft your AI identity.',
+  keywords: ['AI', 'Artificial Intelligence', 'Digital Self', 'Second Me', 'AI Self', 'Mindverse', 'Personal AI'],
   authors: [{ name: 'Mindverse AI' }],
   openGraph: {
-    title: 'Mindverse AI - We Create AI as Your Digital Self',
-    description: 'More Than Just AGI, Your Networked Extension.',
+    title: 'Mindverse AI - Train Your AI Self, Amplify You',
+    description: 'We create AI that amplifies, not erases, YOU.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Mindverse AI',
-    description: 'We Create AI as Your Digital Self',
+    description: 'Train Your AI Self, Amplify You, Bridge the World',
   },
 }
 
@@ -31,10 +30,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased animated-gradient cyber-grid min-h-screen`}>
-        <ParticleBackground />
+      <body className={`${inter.className} antialiased min-h-screen`}>
         <Header />
-        <main className="relative z-10">
+        <main>
           {children}
         </main>
         <Footer />
