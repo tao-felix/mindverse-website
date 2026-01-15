@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 export default function Header() {
@@ -22,37 +23,39 @@ export default function Header() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/80 backdrop-blur-xl shadow-soft' : ''
+        scrolled ? 'bg-white/80 backdrop-blur-xl shadow-sm' : ''
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+      <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 28C5 28 10 12 15 20C20 28 25 12 30 20C35 28 35 28 35 28" stroke="#1a1a2e" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <span className="text-lg font-semibold tracking-widest text-gray-900 uppercase">
-            Mindverse
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Mindverse"
+            width={160}
+            height={40}
+            className="h-8 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           <Link
             href="/"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+            className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium"
           >
             Home
           </Link>
           <Link
             href="/letter"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+            className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium"
           >
             Founder&apos;s Letter
           </Link>
           <Link
             href="/about"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+            className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium"
           >
             About
           </Link>
@@ -60,7 +63,7 @@ export default function Header() {
             href="https://github.com/mindverse/Second-Me"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+            className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium"
           >
             GitHub
           </a>
